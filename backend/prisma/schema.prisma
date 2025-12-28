@@ -7,43 +7,36 @@ datasource db {
 }
 
 model User {
-  id           String   @id @default(uuid())
-  username     String   @unique 
+  id           String       @id @default(uuid())
+  username     String       @unique
   passwordHash String
   profileImage String?
-  createdAt    DateTime @default(now()) 
-  
-  createdRooms Room[]   @relation("RoomCreator") //note to self: this basicly tells prisma to return the rooms with the user later
-  memberships  RoomMember[] 
+  createdAt    DateTime     @default(now())
+  createdRooms Room[]       @relation("RoomCreator")
+  memberships  RoomMember[]
 }
 
 model Room {
-  id              String   @id @default(uuid())
+  id              String       @id @default(uuid())
   name            String
   description     String?
   backgroundImage String?
-  
-  // Privacy Features
-  isPrivate       Boolean  @default(false)
-  passwordHash    String?  // Optional password for private rooms
-  inviteCode      String   @unique @default(uuid()) // The "link" to share
-
-  createdAt       DateTime @default(now())
-  
-  creator         User     @relation("RoomCreator", fields: [creatorId], references: [id])
+  isPrivate       Boolean      @default(false)
+  passwordHash    String?
+  inviteCode      String       @unique @default(uuid())
+  createdAt       DateTime     @default(now())
   creatorId       String
-  
+  creator         User         @relation("RoomCreator", fields: [creatorId], references: [id])
   members         RoomMember[]
 }
 
-// Intermediate table to track who is in what room (Shared Sidebar logic)
 model RoomMember {
-  id        String   @id @default(uuid())
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
-  room      Room     @relation(fields: [roomId], references: [id])
-  roomId    String
-  joinedAt  DateTime @default(now())
+  id       String   @id @default(uuid())
+  userId   String
+  roomId   String
+  joinedAt DateTime @default(now())
+  room     Room     @relation(fields: [roomId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
 
-  @@unique([userId, roomId]) // A user can't join the same room twice
+  @@unique([userId, roomId])
 }
