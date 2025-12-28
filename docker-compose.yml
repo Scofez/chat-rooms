@@ -1,0 +1,15 @@
+services:                # Defines the different "apps" in the project
+  db:                    # The name we gave to this specific container
+    image: postgres:15   # Tells Docker to download the official PostgreSQL v15 image
+    restart: always      # If the DB crashes or your PC restarts, Docker brings it back up
+    environment:         # These are the secret keys/config for the database
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=chat_db
+    ports:               # Maps [Your PC port] : [Container port]
+      - "5432:5432"      # Allows your Node.js app to talk to the DB on port 5432
+    volumes:             # Persistence layer
+      - postgres_data:/var/lib/postgresql/data # Saves data on your hard drive
+
+volumes:                 # Defines a named storage space that survives if the container is deleted
+  postgres_data:
