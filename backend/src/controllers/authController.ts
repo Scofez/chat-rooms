@@ -1,10 +1,8 @@
 import type { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
-import { PrismaClient } from '@prisma/client';
 
 import { generateToken } from '../middleware/authMiddleware.js';
-
-const prisma = new PrismaClient();
+import prisma from '../lib/prisma.js';
 
 /**
  * Registers a new user

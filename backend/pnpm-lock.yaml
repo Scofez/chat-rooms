@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@prisma/adapter-pg':
+        specifier: ^7.2.0
+        version: 7.2.0
       '@prisma/client':
         specifier: ^7.2.0
         version: 7.2.0(prisma@7.2.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)
@@ -26,6 +29,9 @@ importers:
       jsonwebtoken:
         specifier: ^9.0.3
         version: 9.0.3
+      pg:
+        specifier: ^8.16.3
+        version: 8.16.3
     devDependencies:
       '@types/bcryptjs':
         specifier: ^2.4.6
@@ -42,12 +48,18 @@ importers:
       '@types/node':
         specifier: ^25.0.3
         version: 25.0.3
+      '@types/pg':
+        specifier: ^8.16.0
+        version: 8.16.0
       prisma:
         specifier: ^7.2.0
         version: 7.2.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
       ts-node-dev:
         specifier: ^2.0.0
         version: 2.0.0(@types/node@25.0.3)(typescript@5.9.3)
+      tsx:
+        specifier: ^4.21.0
+        version: 4.21.0
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -84,6 +96,162 @@ packages:
   '@electric-sql/pglite@0.3.2':
     resolution: {integrity: sha1-GWIUKsJhqrPJ1UuVwf4e3Ektb6A=}
 
+  '@esbuild/aix-ppc64@0.27.2':
+    resolution: {integrity: sha1-Uhy9lo3PNiCUA0lH92+hsY0tQDw=}
+    engines: {node: '>=18'}
+    cpu: [ppc64]
+    os: [aix]
+
+  '@esbuild/android-arm64@0.27.2':
+    resolution: {integrity: sha1-YepVCWLYqhKpszGUOU4Adlem31c=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [android]
+
+  '@esbuild/android-arm@0.27.2':
+    resolution: {integrity: sha1-VUiHgh4AndbYU/ly/ebFFD8d4UI=}
+    engines: {node: '>=18'}
+    cpu: [arm]
+    os: [android]
+
+  '@esbuild/android-x64@0.27.2':
+    resolution: {integrity: sha1-p86dByGCX8V4+SkqdtnlMzRIC6I=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [android]
+
+  '@esbuild/darwin-arm64@0.27.2':
+    resolution: {integrity: sha1-LLdlm9XRCYA8WTz8QURQ1UMMglY=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@esbuild/darwin-x64@0.27.2':
+    resolution: {integrity: sha1-50H6axq7DNA2QSa6NMoX/V579Qk=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@esbuild/freebsd-arm64@0.27.2':
+    resolution: {integrity: sha1-K2TnEWhlyhctTOA0EUwh88k+OXw=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [freebsd]
+
+  '@esbuild/freebsd-x64@0.27.2':
+    resolution: {integrity: sha1-5SUlUeZvSZ5JNO+2EYEvOCDpkLs=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@esbuild/linux-arm64@0.27.2':
+    resolution: {integrity: sha1-3ErPI1UxzWmE9dbDsT2/t92zA8s=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@esbuild/linux-arm@0.27.2':
+    resolution: {integrity: sha1-VqkA45JA19XR0nO8BT2qKVyS4yI=}
+    engines: {node: '>=18'}
+    cpu: [arm]
+    os: [linux]
+
+  '@esbuild/linux-ia32@0.27.2':
+    resolution: {integrity: sha1-1KNtRzNg9ocO/NGdUrv/9Zou0cw=}
+    engines: {node: '>=18'}
+    cpu: [ia32]
+    os: [linux]
+
+  '@esbuild/linux-loong64@0.27.2':
+    resolution: {integrity: sha1-/PCrjD6q9FiR0BldSWHLGLV5cWo=}
+    engines: {node: '>=18'}
+    cpu: [loong64]
+    os: [linux]
+
+  '@esbuild/linux-mips64el@0.27.2':
+    resolution: {integrity: sha1-WYtn00BIu37hkByxLioKQ0w4HBA=}
+    engines: {node: '>=18'}
+    cpu: [mips64el]
+    os: [linux]
+
+  '@esbuild/linux-ppc64@0.27.2':
+    resolution: {integrity: sha1-OEbF32sgFtq5vJXd4mxA8R5DtMA=}
+    engines: {node: '>=18'}
+    cpu: [ppc64]
+    os: [linux]
+
+  '@esbuild/linux-riscv64@0.27.2':
+    resolution: {integrity: sha1-Fz1EdbN8jSw+FwfgaMF0uz9T0H0=}
+    engines: {node: '>=18'}
+    cpu: [riscv64]
+    os: [linux]
+
+  '@esbuild/linux-s390x@0.27.2':
+    resolution: {integrity: sha1-96R5AQXtyrilox3yb7+sGqPaz6s=}
+    engines: {node: '>=18'}
+    cpu: [s390x]
+    os: [linux]
+
+  '@esbuild/linux-x64@0.27.2':
+    resolution: {integrity: sha1-LswShLGQSutB5Uyd3H/NNJsY9lA=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [linux]
+
+  '@esbuild/netbsd-arm64@0.27.2':
+    resolution: {integrity: sha1-4oY8LNFQGEWZXLEa3yb3/kvlJ7A=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [netbsd]
+
+  '@esbuild/netbsd-x64@0.27.2':
+    resolution: {integrity: sha1-k/dgniiF0cC1oUF4hfuo0fzEEnI=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [netbsd]
+
+  '@esbuild/openbsd-arm64@0.27.2':
+    resolution: {integrity: sha1-oZhWBKIDzcMl/UdULhBvr9aY8C4=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [openbsd]
+
+  '@esbuild/openbsd-x64@0.27.2':
+    resolution: {integrity: sha1-ggnkbELx/75uTvd6MuH0fUBK1Co=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [openbsd]
+
+  '@esbuild/openharmony-arm64@0.27.2':
+    resolution: {integrity: sha1-j63kRBiT2cxEy9fc83dvUIq2+y8=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [openharmony]
+
+  '@esbuild/sunos-x64@0.27.2':
+    resolution: {integrity: sha1-mA1LlwOhbw8HAWYyQk/G2aeJ38I=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [sunos]
+
+  '@esbuild/win32-arm64@0.27.2':
+    resolution: {integrity: sha1-HAmjYzyUnq09gIujcnaIPnH2ERo=}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@esbuild/win32-ia32@0.27.2':
+    resolution: {integrity: sha1-Gx46Y61L74IgD+9ONp4P/3AJ7uU=}
+    engines: {node: '>=18'}
+    cpu: [ia32]
+    os: [win32]
+
+  '@esbuild/win32-x64@0.27.2':
+    resolution: {integrity: sha1-nlhatghr75lMbopbOgSBIZrahis=}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [win32]
+
   '@hono/node-server@1.19.6':
     resolution: {integrity: sha1-ROx4YH830965R2k3BJxyHH3Hk5A=}
     engines: {node: '>=18.14.1'}
@@ -103,6 +271,9 @@ packages:
   '@mrleebo/prisma-ast@0.12.1':
     resolution: {integrity: sha1-yxysF42Y41G28wCYGrwf/rKPfN0=}
     engines: {node: '>=16'}
+
+  '@prisma/adapter-pg@7.2.0':
+    resolution: {integrity: sha1-qVauS2sWjtLhxoegtF4NFjOVm/A=}
 
   '@prisma/client-runtime-utils@7.2.0':
     resolution: {integrity: sha1-sXyWZ9DYV5iPba3z1vus94fuMQk=}
@@ -130,6 +301,9 @@ packages:
 
   '@prisma/dev@0.17.0':
     resolution: {integrity: sha1-BCO8TnSdCAFA0xbZDgg1Ot9S7no=}
+
+  '@prisma/driver-adapter-utils@7.2.0':
+    resolution: {integrity: sha1-U9ZobNu2lTOIJuHIq1rJfJLvtnY=}
 
   '@prisma/engines-version@7.2.0-4.0c8ef2ce45c83248ab3df073180d5eda9e8be7a3':
     resolution: {integrity: sha1-NxBGec+nzF9UNL8C+iK0sM+QuU8=}
@@ -200,6 +374,9 @@ packages:
 
   '@types/node@25.0.3':
     resolution: {integrity: sha1-ebmsgxjzc/v6r24nhIk++pcB8mk=}
+
+  '@types/pg@8.16.0':
+    resolution: {integrity: sha1-t68NZCdSNAt8neHDOv2bxcXw6+s=}
 
   '@types/qs@6.14.0':
     resolution: {integrity: sha1-2LYM7PYvLbD7aOXgBgd7kXi4XeU=}
@@ -423,6 +600,11 @@ packages:
     resolution: {integrity: sha1-HE8sSDcydZfOadLKGQp/3RcjOME=}
     engines: {node: '>= 0.4'}
 
+  esbuild@0.27.2:
+    resolution: {integrity: sha1-2D7SFU1YE6U2c3a7IpKpKW/INxc=}
+    engines: {node: '>=18'}
+    hasBin: true
+
   escape-html@1.0.3:
     resolution: {integrity: sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=}
 
@@ -485,6 +667,9 @@ packages:
   get-proto@1.0.1:
     resolution: {integrity: sha1-FQs/J0OGnvPoUewMSdFbHRTQDuE=}
     engines: {node: '>= 0.4'}
+
+  get-tsconfig@4.13.0:
+    resolution: {integrity: sha1-/N2ZHm0iq5pgDwDpHDGHB6XZoNc=}
 
   giget@2.0.0:
     resolution: {integrity: sha1-OV/JNKQ/mnopop1VuZ8j4wwU8ZU=}
@@ -721,12 +906,66 @@ packages:
   perfect-debounce@1.0.0:
     resolution: {integrity: sha1-nC6LwwsWnMmEpYt9WygEmDlZHSo=}
 
+  pg-cloudflare@1.2.7:
+    resolution: {integrity: sha1-ofPSJrqyxFrnXqVNZewFrGz6++8=}
+
+  pg-connection-string@2.9.1:
+    resolution: {integrity: sha1-ux/QAR4ut2rBc2Dcj6GDstNGUjg=}
+
+  pg-int8@1.0.1:
+    resolution: {integrity: sha1-lDvUY79bcbQXARX4D478mgwOt4w=}
+    engines: {node: '>=4.0.0'}
+
+  pg-pool@3.10.1:
+    resolution: {integrity: sha1-SBBHxyC+LWJHkhAMrBgW+IUNMbI=}
+    peerDependencies:
+      pg: '>=8.0'
+
+  pg-protocol@1.10.3:
+    resolution: {integrity: sha1-rJ5HeK0/hNDFZwWDurl26go09p8=}
+
+  pg-types@2.2.0:
+    resolution: {integrity: sha1-LQJQ1jZFT3z6O2rgOC/fqAYyVKM=}
+    engines: {node: '>=4'}
+
+  pg@8.16.3:
+    resolution: {integrity: sha1-FgdB0LRP32RoDkU3SwbWMuhsmf0=}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      pg-native: '>=3.0.1'
+    peerDependenciesMeta:
+      pg-native:
+        optional: true
+
+  pgpass@1.0.5:
+    resolution: {integrity: sha1-m4c+SlZLsQ+np9vVUxJyjUIqIj0=}
+
   picomatch@2.3.1:
     resolution: {integrity: sha1-O6ODNzNkbZ0+SZWUbBNlpn+wekI=}
     engines: {node: '>=8.6'}
 
   pkg-types@2.3.0:
     resolution: {integrity: sha1-A38sGb1UApZv9oEOMnBlWMtbVyY=}
+
+  postgres-array@2.0.0:
+    resolution: {integrity: sha1-SPj84FT7xpZxmZMpuINLdyZS2C4=}
+    engines: {node: '>=4'}
+
+  postgres-array@3.0.4:
+    resolution: {integrity: sha1-TvyvTSxojYvKqGIO0T818pn3Uow=}
+    engines: {node: '>=12'}
+
+  postgres-bytea@1.0.1:
+    resolution: {integrity: sha1-xAs9oCIsUA/x5RxdcBS2C3lpfHo=}
+    engines: {node: '>=0.10.0'}
+
+  postgres-date@1.0.7:
+    resolution: {integrity: sha1-UbwIYAYAXlBhxZHO5yfyUxv2Qag=}
+    engines: {node: '>=0.10.0'}
+
+  postgres-interval@1.2.0:
+    resolution: {integrity: sha1-tGDILLFYdQd4iBmgaqD//bNURpU=}
+    engines: {node: '>=0.10.0'}
 
   postgres@3.4.7:
     resolution: {integrity: sha1-Ei9GCoCP4wDK5T9ZIQi5kG5iU0U=}
@@ -792,6 +1031,9 @@ packages:
 
   remeda@2.21.3:
     resolution: {integrity: sha1-FlUbAvnH4YS3viJvV20MYzVhKt8=}
+
+  resolve-pkg-maps@1.0.0:
+    resolution: {integrity: sha1-YWs9wsVwVrVYjDHN9LPWTbEzcg8=}
 
   resolve@1.22.11:
     resolution: {integrity: sha1-qthXzh/7i/qbCxrCnxFWOD9owmI=}
@@ -876,6 +1118,10 @@ packages:
     resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=}
     engines: {node: '>=0.10.0'}
 
+  split2@4.2.0:
+    resolution: {integrity: sha1-ycWSCQTRSLqwufZxRfJFqGqtv6Q=}
+    engines: {node: '>= 10.x'}
+
   sqlstring@2.3.3:
     resolution: {integrity: sha1-Ldwh8DvOLDh+1gaA5zmSLGV1HQw=}
     engines: {node: '>= 0.6'}
@@ -942,6 +1188,11 @@ packages:
 
   tsconfig@7.0.0:
     resolution: {integrity: sha1-hFOIdaTcIW5cSlQys6Tew9VOkbc=}
+
+  tsx@4.21.0:
+    resolution: {integrity: sha1-Mqps8XSB4zb3Vhleb+BNrj5jCLE=}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
 
   type-fest@4.41.0:
     resolution: {integrity: sha1-auHI5XMSc8K/H1itOcuuLJGkbFg=}
@@ -1028,6 +1279,84 @@ snapshots:
 
   '@electric-sql/pglite@0.3.2': {}
 
+  '@esbuild/aix-ppc64@0.27.2':
+    optional: true
+
+  '@esbuild/android-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/android-arm@0.27.2':
+    optional: true
+
+  '@esbuild/android-x64@0.27.2':
+    optional: true
+
+  '@esbuild/darwin-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/darwin-x64@0.27.2':
+    optional: true
+
+  '@esbuild/freebsd-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/freebsd-x64@0.27.2':
+    optional: true
+
+  '@esbuild/linux-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/linux-arm@0.27.2':
+    optional: true
+
+  '@esbuild/linux-ia32@0.27.2':
+    optional: true
+
+  '@esbuild/linux-loong64@0.27.2':
+    optional: true
+
+  '@esbuild/linux-mips64el@0.27.2':
+    optional: true
+
+  '@esbuild/linux-ppc64@0.27.2':
+    optional: true
+
+  '@esbuild/linux-riscv64@0.27.2':
+    optional: true
+
+  '@esbuild/linux-s390x@0.27.2':
+    optional: true
+
+  '@esbuild/linux-x64@0.27.2':
+    optional: true
+
+  '@esbuild/netbsd-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/netbsd-x64@0.27.2':
+    optional: true
+
+  '@esbuild/openbsd-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/openbsd-x64@0.27.2':
+    optional: true
+
+  '@esbuild/openharmony-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/sunos-x64@0.27.2':
+    optional: true
+
+  '@esbuild/win32-arm64@0.27.2':
+    optional: true
+
+  '@esbuild/win32-ia32@0.27.2':
+    optional: true
+
+  '@esbuild/win32-x64@0.27.2':
+    optional: true
+
   '@hono/node-server@1.19.6(hono@4.10.6)':
     dependencies:
       hono: 4.10.6
@@ -1045,6 +1374,14 @@ snapshots:
     dependencies:
       chevrotain: 10.5.0
       lilconfig: 2.1.0
+
+  '@prisma/adapter-pg@7.2.0':
+    dependencies:
+      '@prisma/driver-adapter-utils': 7.2.0
+      pg: 8.16.3
+      postgres-array: 3.0.4
+    transitivePeerDependencies:
+      - pg-native
 
   '@prisma/client-runtime-utils@7.2.0': {}
 
@@ -1089,6 +1426,10 @@ snapshots:
       zeptomatch: 2.0.2
     transitivePeerDependencies:
       - typescript
+
+  '@prisma/driver-adapter-utils@7.2.0':
+    dependencies:
+      '@prisma/debug': 7.2.0
 
   '@prisma/engines-version@7.2.0-4.0c8ef2ce45c83248ab3df073180d5eda9e8be7a3': {}
 
@@ -1171,6 +1512,12 @@ snapshots:
   '@types/node@25.0.3':
     dependencies:
       undici-types: 7.16.0
+
+  '@types/pg@8.16.0':
+    dependencies:
+      '@types/node': 25.0.3
+      pg-protocol: 1.10.3
+      pg-types: 2.2.0
 
   '@types/qs@6.14.0': {}
 
@@ -1384,6 +1731,35 @@ snapshots:
     dependencies:
       es-errors: 1.3.0
 
+  esbuild@0.27.2:
+    optionalDependencies:
+      '@esbuild/aix-ppc64': 0.27.2
+      '@esbuild/android-arm': 0.27.2
+      '@esbuild/android-arm64': 0.27.2
+      '@esbuild/android-x64': 0.27.2
+      '@esbuild/darwin-arm64': 0.27.2
+      '@esbuild/darwin-x64': 0.27.2
+      '@esbuild/freebsd-arm64': 0.27.2
+      '@esbuild/freebsd-x64': 0.27.2
+      '@esbuild/linux-arm': 0.27.2
+      '@esbuild/linux-arm64': 0.27.2
+      '@esbuild/linux-ia32': 0.27.2
+      '@esbuild/linux-loong64': 0.27.2
+      '@esbuild/linux-mips64el': 0.27.2
+      '@esbuild/linux-ppc64': 0.27.2
+      '@esbuild/linux-riscv64': 0.27.2
+      '@esbuild/linux-s390x': 0.27.2
+      '@esbuild/linux-x64': 0.27.2
+      '@esbuild/netbsd-arm64': 0.27.2
+      '@esbuild/netbsd-x64': 0.27.2
+      '@esbuild/openbsd-arm64': 0.27.2
+      '@esbuild/openbsd-x64': 0.27.2
+      '@esbuild/openharmony-arm64': 0.27.2
+      '@esbuild/sunos-x64': 0.27.2
+      '@esbuild/win32-arm64': 0.27.2
+      '@esbuild/win32-ia32': 0.27.2
+      '@esbuild/win32-x64': 0.27.2
+
   escape-html@1.0.3: {}
 
   etag@1.8.1: {}
@@ -1481,6 +1857,10 @@ snapshots:
     dependencies:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
+
+  get-tsconfig@4.13.0:
+    dependencies:
+      resolve-pkg-maps: 1.0.0
 
   giget@2.0.0:
     dependencies:
@@ -1693,6 +2073,41 @@ snapshots:
 
   perfect-debounce@1.0.0: {}
 
+  pg-cloudflare@1.2.7:
+    optional: true
+
+  pg-connection-string@2.9.1: {}
+
+  pg-int8@1.0.1: {}
+
+  pg-pool@3.10.1(pg@8.16.3):
+    dependencies:
+      pg: 8.16.3
+
+  pg-protocol@1.10.3: {}
+
+  pg-types@2.2.0:
+    dependencies:
+      pg-int8: 1.0.1
+      postgres-array: 2.0.0
+      postgres-bytea: 1.0.1
+      postgres-date: 1.0.7
+      postgres-interval: 1.2.0
+
+  pg@8.16.3:
+    dependencies:
+      pg-connection-string: 2.9.1
+      pg-pool: 3.10.1(pg@8.16.3)
+      pg-protocol: 1.10.3
+      pg-types: 2.2.0
+      pgpass: 1.0.5
+    optionalDependencies:
+      pg-cloudflare: 1.2.7
+
+  pgpass@1.0.5:
+    dependencies:
+      split2: 4.2.0
+
   picomatch@2.3.1: {}
 
   pkg-types@2.3.0:
@@ -1700,6 +2115,18 @@ snapshots:
       confbox: 0.2.2
       exsolve: 1.0.8
       pathe: 2.0.3
+
+  postgres-array@2.0.0: {}
+
+  postgres-array@3.0.4: {}
+
+  postgres-bytea@1.0.1: {}
+
+  postgres-date@1.0.7: {}
+
+  postgres-interval@1.2.0:
+    dependencies:
+      xtend: 4.0.2
 
   postgres@3.4.7: {}
 
@@ -1768,6 +2195,8 @@ snapshots:
   remeda@2.21.3:
     dependencies:
       type-fest: 4.41.0
+
+  resolve-pkg-maps@1.0.0: {}
 
   resolve@1.22.11:
     dependencies:
@@ -1873,6 +2302,8 @@ snapshots:
 
   source-map@0.6.1: {}
 
+  split2@4.2.0: {}
+
   sqlstring@2.3.3: {}
 
   statuses@2.0.2: {}
@@ -1937,6 +2368,13 @@ snapshots:
       '@types/strip-json-comments': 0.0.30
       strip-bom: 3.0.0
       strip-json-comments: 2.0.1
+
+  tsx@4.21.0:
+    dependencies:
+      esbuild: 0.27.2
+      get-tsconfig: 4.13.0
+    optionalDependencies:
+      fsevents: 2.3.3
 
   type-fest@4.41.0: {}
 
