@@ -1,6 +1,6 @@
 import axios, { isAxiosError, type AxiosInstance, type AxiosRequestConfig, type Method } from 'axios';
 
-import AuthQueryHandler from './AuthQueryHandler';
+import authQueryHandler from './AuthQueryHandler';
 
 interface ResponseError {
     message: string;
@@ -20,7 +20,7 @@ class QueryHandler {
         });
         // Add token to all requests
         this.axiosInstance.interceptors.request.use((config) => {
-            const token = AuthQueryHandler.getToken();
+            const token = authQueryHandler.getToken();
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }
