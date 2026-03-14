@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import { authStore, queryHandler } from '../lib/easy-auth';
 import { AuthForm, type AuthCredentials } from '@scofez/easy-auth';
 
@@ -17,5 +18,8 @@ export const LoginPage = () => {
     }
   };
 
-  return <AuthForm onLogin={handleLogin} onRegister={() => {}} />;
+  return (
+  <Box width="100%" height="100%" display="flex">
+    <AuthForm onLogin={handleLogin} onRegister={() => {}} />
+  </Box>)
 };
