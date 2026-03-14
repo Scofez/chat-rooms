@@ -6,9 +6,9 @@ export const LoginPage = () => {
   const handleLogin = async (creds: AuthCredentials) => {
     try {
       const response = await queryHandler.query<{ token: string }>(
-        '/auth/login', 
+        '/security/login', 
         'POST', 
-        creds
+        { username: creds.username, password: creds.pass }
       );
       
       authStore.setToken(response.token);
@@ -18,8 +18,23 @@ export const LoginPage = () => {
     }
   };
 
+  const handleRegister = async (creds: AuthCredentials) => {
+    try {
+      const response = await queryHandler.query<{token: string}>(
+        '/security/register',
+        'POST',
+        { username: creds.username, password: creds.pass }
+      );
+      authStore.setToken(response.token);
+      globalThis.location.href = '/chat';
+    }
+    catch (err) {
+      console.error('Register failed', err);
+    }
+  }
+
   return (
-  <Box width="100%" height="100%" display="flex">
-    <AuthForm onLogin={handleLogin} onRegister={() => {}} />
+  <Box width="100%" height="100%" display="flex" justifyContent="center" alignItems="center">
+    <AuthForm onLogin={handleLogin} onRegister={handleRegister} />
   </Box>)
 };

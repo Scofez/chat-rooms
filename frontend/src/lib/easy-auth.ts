@@ -8,7 +8,7 @@ export const authStore = new AuthStore('chat_rooms_token');
 // always gets the LATEST token from the store.
 export const queryHandler = new QueryHandler(
   { 
-    baseURL: 'http://localhost:5000/api', 
+    baseURL: 'http://localhost:4000', 
     tokenKey: 'chat_rooms_token' 
   },
   () => authStore.getToken()
