@@ -32,11 +32,12 @@ export const createRoom = async (req: Request, res: Response) => {
                     create: {
                         userId
                     }
-                }
+                },
+                
             }
         });
 
-        res.status(201).json({ message: 'Room created', room: newRoom});
+        res.status(201).json({ message: 'Room created', room: {...newRoom, _count: { members: 1 }} });
     } catch (error) {
         res.status(500).json({ message: "Failed to create the room" , error });
     }

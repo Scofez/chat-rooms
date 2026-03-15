@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { authStore } from './lib/easy-auth';
 import { LoginPage } from './components/LoginPage';
 import type { JSX } from 'react';
+import { ChatDashboard } from './components/ChatDashboard';
 
 // A simple wrapper to protect chat routes
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
@@ -9,26 +10,41 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   return authStore.isAuthenticated() ? children : <Navigate to="/login" />;
 };
 
+const PublicRoute = ({ children }: { children: JSX.Element }) => {
+  // If already logged in, push them straight to the chat
+  return authStore.isAuthenticated() ? <Navigate to="/chat" replace /> : children;
+};
 function App() {
+  console.log('Is Authenticated:', authStore.isAuthenticated());
+
   return (
     <Router>
       <Routes>
-        {/* Public Route */}
-        <Route path="/login" element={<LoginPage />} />
+        {/* Correct way to wrap a public route */}
+        <Route 
+          path="/login" 
+          element={
+            <PublicRoute>
+              <LoginPage />
+            </PublicRoute>
+          } 
+        />
 
         {/* Protected Chat Routes */}
         <Route 
-          path="/chat" 
+          path="/" 
           element={
             <ProtectedRoute>
-              <>
-              <h1>Welcome User</h1>
-              <p>Your authenticated session is active.</p>
-              </>
+              <ChatDashboard />
             </ProtectedRoute>
           } 
         />
-        <Route path="*" element={<Navigate to="/login" />} />
+
+        {/* Catch-all redirect */}
+        <Route 
+          path="*" 
+          element={<Navigate to={authStore.isAuthenticated() ? "/" : "/login"} replace />} 
+        />
       </Routes>
     </Router>
   );

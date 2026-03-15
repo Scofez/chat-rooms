@@ -1,8 +1,10 @@
 import { Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { authStore, queryHandler } from '../lib/easy-auth';
 import { AuthForm, type AuthCredentials } from '@scofez/easy-auth';
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
   const handleLogin = async (creds: AuthCredentials) => {
     try {
       const response = await queryHandler.query<{ token: string }>(
@@ -12,7 +14,7 @@ export const LoginPage = () => {
       );
       
       authStore.setToken(response.token);
-      globalThis.location.href = '/chat';
+      navigate('/chat');
     } catch (err) {
       console.error("Login failed", err);
     }
@@ -26,7 +28,7 @@ export const LoginPage = () => {
         { username: creds.username, password: creds.pass }
       );
       authStore.setToken(response.token);
-      globalThis.location.href = '/chat';
+      navigate('/chat');
     }
     catch (err) {
       console.error('Register failed', err);
